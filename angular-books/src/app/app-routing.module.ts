@@ -6,6 +6,7 @@ import { FormRegisterComponent } from './component/form-register/form-register.c
 import { ProfileComponent } from './pages/profile/profile.component';
 
 const routes: Routes = [
+  {path: "", redirectTo: "home", pathMatch: "full"},
   {path: "home", component: HomeComponent},
   {path: "registro", component: RegisterComponent}, 
   {path: "formReg", component: FormRegisterComponent},
