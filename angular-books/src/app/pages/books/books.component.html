@@ -1,0 +1,49 @@
+<div class="fondoBooks">
+
+    <div class="noHay" *ngIf="books.length===0">
+        <h1>¡No hay libros en la biblioteca!</h1>
+    </div>
+
+    <div class="list">
+        <ul class="unList">
+            <li *ngFor = "let book of books" class="listItem">
+    
+                <div class="card">
+                    <figure class="imgn">
+                        <img src="{{book.photo}}" alt="">
+                    </figure>
+    
+                    <div class="contenido">
+                        <div class="c1">
+                            <h4 class="cType">Tapa {{book.type}}</h4>
+                            <hr>
+                            <h2 class="cTtle">{{book.title}}</h2>
+                            <h4 class="cAthr">Autor: {{book.author}}</h4>
+                            <h4 class="cIdBk">Ref - 0{{book.id_book}}</h4>
+                        </div>
+    
+                        <div class="c2">
+                            <h3>{{book.price}} €</h3>
+                            <button type="button" class="bComprar" (click)="comprar()" [ngStyle]="{'background-color': (books.indexOf(book) % 2===0)? 'rgb(0, 140, 114)' : 'rgb(49, 49, 49)'}">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+    
+            </li>
+        </ul>
+    </div>
+    
+
+    <div class="formulario">
+        <h1>Añadir libro</h1>
+        <div class="form">
+            <input type="text" placeholder="Título" class="inputNewBook" #nBookName>
+            <input type="text" placeholder="Tapa dura / banda" class="inputNewBook" #nBookTapa>
+            <input type="text" placeholder="Autor" class="inputNewBook" #nBookAutor>
+            <input type="text" placeholder="Precio" class="inputNewBook" #nBookPrecio>
+            <input type="text" placeholder="Photo" class="inputNewBook" #nBookPhoto>
+            <input type="text" placeholder="Código" class="inputNewBook" #nBookCode>
+        </div>
+        <button class="bInsert" (click)="insert(nBookName.value, nBookTapa.value, nBookAutor.value , nBookPrecio.value ,nBookPhoto.value ,nBookCode.value)">Insertar libro</button>
+    </div>
+</div>
