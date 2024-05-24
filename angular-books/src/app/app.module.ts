@@ -11,6 +11,9 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { BooksComponent } from './pages/books/books.component';
 import { CodigoLibrosPipe } from './pipes/codigo-libros.pipe';
+import { CardComponent } from './component/card/card.component';
+import { UpdateBookComponent } from './pages/update-book/update-book.component';
+import { AddBookComponent } from './pages/add-book/add-book.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,9 @@ import { CodigoLibrosPipe } from './pipes/codigo-libros.pipe';
     ProfileComponent,
     BooksComponent,
     CodigoLibrosPipe,
+    CardComponent,
+    UpdateBookComponent,
+    AddBookComponent,
   ],
   imports: [
     BrowserModule,
