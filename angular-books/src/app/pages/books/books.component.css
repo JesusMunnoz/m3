@@ -37,10 +37,9 @@
 }
 .listItem{
     list-style: none;
-    
 }
 
-.card{
+/*.card{
     margin: 0;
     width: 300px;
     height: 550px;
@@ -111,10 +110,9 @@ img{
     border-radius: 5px; 
     font-size: 20px;
     color: white;
-}
+}*/
 
 .formulario{
-    
     width: 100vw;
     display: flex;
     flex-direction: column;

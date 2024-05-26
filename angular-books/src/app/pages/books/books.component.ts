@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from 'src/app/models/book';
+import { UpdateBookComponent } from '../update-book/update-book.component';
 
 @Component({
   selector: 'app-books',
@@ -23,16 +24,12 @@ export class BooksComponent implements OnInit {
 
   insert(insrtName:string, insrtTapa:string, insrtAutor:string, insrtPrecio:number, insrtPhoto:string, insrtCode:number):void{
     let newBook = new Book( insrtName, insrtTapa, insrtAutor, insrtPrecio, insrtPhoto, insrtCode);
-
     this.books.push(newBook);
-
     console.log(newBook);
-    
   }
 
-  delete(bookDelete:Book):void{
-   this.books = this.books.filter(book => book !== bookDelete);
-   console.log('Delete', bookDelete);
+  deleteBook(book:Book):void{
+   this.books = this.books.filter(b => b !== book);
   }
 
   ngOnInit(): void{
