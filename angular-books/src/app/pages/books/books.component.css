@@ -10,7 +10,7 @@
     aspect-ratio: 1/1;
 
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
     
@@ -20,6 +20,19 @@
 .noHay{
     font-size: 80px;
     text-align: center;
+}
+.inputSearchBook{
+    width: 400px;
+    height: 50px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    background: rgba(129, 255, 232, 0);
+    margin-top: 50px;
+}
+input::placeholder{
+    color:white
 }
 
 .list{
@@ -32,7 +45,7 @@
     justify-content: space-evenly;
     flex-wrap: wrap;
 
-    margin-top: 100px;
+    margin-top: 50px;
     gap: 20px;
 }
 .listItem{
@@ -112,7 +125,7 @@ img{
     color: white;
 }*/
 
-.formulario{
+/*.formulario{
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -149,4 +162,4 @@ input::placeholder{
     border-radius: 5px; 
     font-size: 20px;
     color: white;
-}
+}*/

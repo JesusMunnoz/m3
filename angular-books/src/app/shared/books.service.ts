@@ -1,0 +1,52 @@
+import { Injectable } from '@angular/core';
+import { Book } from '../models/book';
+
+@Injectable({
+  providedIn: 'root'
+})
+
+export class BooksService {
+
+  private books: Book[] = [
+    new Book("El capitán Alatriste", "Blada", "Arturo Perez-Reverte", 10.40, "https://www.aytosanlorenzo.es/wp-content/uploads/2020/04/phalbm25732285_w980h638c1.jpg", undefined, undefined),
+    new Book("La Bruja Mon", "Blada", "Pilar Mateos", 3.60, "https://www.aytosanlorenzo.es/wp-content/uploads/2020/04/phalbm25732285_w980h638c1.jpg", 1, 1),
+    new Book("Fray Perico y su borrico", "Blada", "Juan Muñoz Martín", 8.74, "https://www.aytosanlorenzo.es/wp-content/uploads/2020/04/phalbm25732285_w980h638c1.jpg", 2, 2),
+    new Book("Don Quijote de la Mancha", "Dura", "Miguel de Cervantes", 500000, "https://www.aytosanlorenzo.es/wp-content/uploads/2020/04/phalbm25732285_w980h638c1.jpg", 3, 3),
+    new Book("El Señor de los anillos", "Dura", "J. R. R. Tolkien", 65, "https://www.aytosanlorenzo.es/wp-content/uploads/2020/04/phalbm25732285_w980h638c1.jpg", 4, 4)
+  ]
+
+  public getAll(): Book[]{
+    return this.books;
+  }
+
+  public getOne(id_book: number): Book{
+    return this.books.find(book => book.id_book === id_book)
+  }
+
+  public add(book: Book): void{
+    this.books.push(book);
+  }
+
+  public edit(book: Book): boolean{
+    let i = this.books.findIndex(b => b.id_book === book.id_book);
+    if (i != -1){
+      this.books[i] = book
+      //this.books.splice(i, 1, book)
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+
+  public delete(id_book: number): boolean{
+    let i = this.books.findIndex(b => b.id_book === id_book);
+    if (i != -1){
+      this.books.splice(i, 1)
+      return true;
+    }
+    return false;
+  }
+
+  constructor() { }
+}
