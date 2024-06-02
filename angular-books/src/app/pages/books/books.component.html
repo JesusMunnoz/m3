@@ -5,54 +5,15 @@
     </div>
 
     <div class="buscar" >
-        <input type="number" id="idBook" placeholder="Buscar por id" class="inputSearchBook" >
-        
+        <input type="number" placeholder="Buscar por id" class="inputSearchBook" [(ngModel)]="filterBooks" name="filterBooks">
     </div>
-
+    
     <div class="list">
         <ul class="unList">
-            <li *ngFor = "let book of books; let i = index"  class="listItem">
+            <li *ngFor = "let book of books | filter: filterBooks; let i = index"  class="listItem">
                 <app-card [book]="book" [index]="i" (delete)="deleteBook($event)"></app-card>
-    
-                <!--<div class="card">
-                    <figure class="imgn">
-                        <div class="marco">
-                            <img src="{{book.photo}}" alt="">
-                            <button class="bX" (click)="delete(book)">X</button>
-                        </div>
-                    </figure>
-    
-                    <div class="contenido">
-                        <div class="c1">
-                            <h4 class="cType">Tapa {{book.type}}</h4>
-                            <hr>
-                            <h2 class="cTtle">{{book.title}}</h2>
-                            <h4 class="cAthr">Autor: {{book.author}}</h4>
-                            <h4 class="cIdBk">{{ book.id_book | codigoLibros }}</h4>
-                        </div>
-    
-                        <div class="c2">
-                            <h3>{{book.price}} €</h3>
-                            <button type="button" class="bComprar" [ngStyle]="{'background-color': (books.indexOf(book) % 2===0)? 'rgb(0, 140, 114)' : 'rgb(49, 49, 49)'}">Comprar</button>
-                        </div>
-                    </div>
-                </div>-->
-    
             </li>
         </ul>
     </div>
-    
 
-    <!--<div class="formulario">
-        <h1>Añadir libro</h1>
-        <div class="form">
-            <input type="text" placeholder="Título" class="inputNewBook" #nBookName>
-            <input type="text" placeholder="Tapa dura / banda" class="inputNewBook" #nBookTapa>
-            <input type="text" placeholder="Autor" class="inputNewBook" #nBookAutor>
-            <input type="text" placeholder="Precio" class="inputNewBook" #nBookPrecio>
-            <input type="text" placeholder="Photo" class="inputNewBook" #nBookPhoto>
-            <input type="text" placeholder="Código" class="inputNewBook" #nBookCode>
-        </div>
-        <button class="bInsert" (click)="insert(nBookName.value, nBookTapa.value, nBookAutor.value , nBookPrecio.value ,nBookPhoto.value ,nBookCode.value)">Insertar libro</button>
-    </div>-->
 </div>

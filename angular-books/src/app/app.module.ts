@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,8 @@ import { CodigoLibrosPipe } from './pipes/codigo-libros.pipe';
 import { CardComponent } from './component/card/card.component';
 import { UpdateBookComponent } from './pages/update-book/update-book.component';
 import { AddBookComponent } from './pages/add-book/add-book.component';
+import { BooksService } from './shared/books.service';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -29,12 +32,14 @@ import { AddBookComponent } from './pages/add-book/add-book.component';
     CardComponent,
     UpdateBookComponent,
     AddBookComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [BooksService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

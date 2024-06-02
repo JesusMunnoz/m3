@@ -18,10 +18,9 @@ export class UpdateBookComponent implements OnInit{
     let eBook = new Book(insrtName, insrtTapa, insrtAutor, insrtPrecio, insrtPhoto, insrtCode);
     this.booksService.edit(eBook);
     this.editbook = this.booksService.getAll();
+
     console.log(eBook);
     console.log(this.editbook);
-
-    
 
     this.router.navigateByUrl("/books");
   }

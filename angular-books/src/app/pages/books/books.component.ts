@@ -11,8 +11,9 @@ import { BooksService } from 'src/app/shared/books.service';
 export class BooksComponent implements OnInit {
 
   public books: Book[];
-  public filterId: number | null;
 
+  public filterBooks : string =  '';
+  
   constructor(private booksService: BooksService){}
 
 

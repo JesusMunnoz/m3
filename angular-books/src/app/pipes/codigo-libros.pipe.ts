@@ -7,7 +7,7 @@ export class CodigoLibrosPipe implements PipeTransform {
 
   transform(value: number): string {
     let result: string;
-    result = 'Ref - 00'+ value;
+    result = 'Ref - '+ value;
     return result;
   }
 
