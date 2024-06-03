@@ -31,8 +31,8 @@ export class BooksService {
     let i = book.id_book;
     let j = this.books.findIndex(b => b.id_book === book.id_book);
     if (j){
-      this.books[i] = book
-      //this.books.splice(i, 1, book)
+      //this.books[i] = book
+      this.books.splice(i, 1, book)
       
       console.log(book);
       console.log(this.books);
