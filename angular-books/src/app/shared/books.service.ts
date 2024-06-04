@@ -28,12 +28,19 @@ export class BooksService {
   }
 
   public edit(book: Book): boolean{
-    let i = book.id_book;
-    let j = this.books.findIndex(b => b.id_book === book.id_book);
-    if (j){
-      this.books[i] = book
-      //this.books.splice(i, 1, book)
-      
+    //let i = book.id_book;
+    let index = -1;
+    //let j = this.books.findIndex(b => b.id_book === book.id_book);
+
+    for (let i = 0; i < this.books.length; i++){
+      if (this.books[i].id_book == book.id_book){
+        index = i;
+        break;
+      }
+    }
+    if (index != -1){
+      this.books[index] = book
+
       console.log(book);
       console.log(this.books);
 
@@ -46,6 +53,7 @@ export class BooksService {
     }
   }
 
+  
   public delete(id_book: number): boolean{
     let i = this.books.findIndex(b => b.id_book === id_book);
     if (i != -1){
