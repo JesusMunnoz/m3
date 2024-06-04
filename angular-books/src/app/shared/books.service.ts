@@ -28,19 +28,25 @@ export class BooksService {
   }
 
   public edit(book: Book): boolean{
-    let i = book.id_book;
-    let j = this.books.findIndex(b => b.id_book === book.id_book);
-    if (j){
-      //this.books[i] = book
-      this.books.splice(i, 1, book)
-      
+    
+    let index = -1;
+    
+    for (let i = 0; i < this.books.length; i++){
+      if (this.books[i].id_book == book.id_book){
+        index = i;
+        break;
+      }
+    }
+
+    if (index != -1){
+      this.books[index] = book
+
       console.log(book);
       console.log(this.books);
 
       console.log("funciona");
       return true;
-    }
-    else{
+    }else{
       console.log("no funciona");
       return false;
     }
