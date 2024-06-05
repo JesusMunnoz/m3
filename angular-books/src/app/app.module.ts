@@ -16,7 +16,7 @@ import { CardComponent } from './component/card/card.component';
 import { UpdateBookComponent } from './pages/update-book/update-book.component';
 import { AddBookComponent } from './pages/add-book/add-book.component';
 import { BooksService } from './shared/books.service';
-import { FilterPipe } from './pipes/filter.pipe';
+//import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -31,8 +31,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     CodigoLibrosPipe,
     CardComponent,
     UpdateBookComponent,
-    AddBookComponent,
-    FilterPipe,
+    AddBookComponent/*,
+    FilterPipe,*/
   ],
   imports: [
     BrowserModule,

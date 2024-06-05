@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+/*import { Pipe, PipeTransform } from '@angular/core';
 import { BooksService } from '../shared/books.service';
 
 @Pipe({
@@ -21,4 +21,4 @@ export class FilterPipe implements PipeTransform {
     };
     return resultBooks;
   }
-}
+}*/

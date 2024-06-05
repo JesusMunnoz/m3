@@ -19,7 +19,17 @@ export class BooksService {
     return this.books;
   }
 
-  public getOne(id_book: number): Book{
+  /*public getOne(id_book: number): Book{
+    return this.books.find(book => book.id_book === id_book)
+  }*/
+
+  public getOne(id_book: number): Book {
+    for (let i = 0; i < this.books.length; i++){
+      if (this.books[i].id_book == id_book){
+        console.log(this.books[i])
+        return this.books[i];
+      }
+    }
     return this.books.find(book => book.id_book === id_book)
   }
 
