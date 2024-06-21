@@ -7,6 +7,8 @@ import { FormRegisterComponent } from './component/form-register/form-register.c
 import { ProfileComponent } from './pages/profile/profile.component';
 import {UpdateBookComponent} from './pages/update-book/update-book.component';
 import { AddBookComponent } from './pages/add-book/add-book.component';
+import { LoginComponent } from './pages/login/login.component';
+import { FormLoginComponent } from './component/form-login/form-login.component';
 
 
 const routes: Routes = [
@@ -17,7 +19,9 @@ const routes: Routes = [
   {path: "formReg", component: FormRegisterComponent},
   {path: "perfil", component: ProfileComponent}, 
   {path: "update", component: UpdateBookComponent},
-  {path: "add", component: AddBookComponent}
+  {path: "add", component: AddBookComponent},
+  {path: "login", component: LoginComponent},
+  {path: "formLog", component: FormLoginComponent}
 ];
 
 @NgModule({

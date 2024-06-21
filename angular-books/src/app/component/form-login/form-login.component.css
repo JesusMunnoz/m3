@@ -1,4 +1,4 @@
-.fondo{
+.fondol{
     height: 82vh;
     width: 100vw;
     display: flex;
@@ -26,7 +26,7 @@
     flex-direction: column;
     font-size: 50px;
     align-items: center;
-    padding-top: 25px;
+    padding-top: 20px;
 }
 hr{
     width: 90%;

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +16,8 @@ import { CardComponent } from './component/card/card.component';
 import { UpdateBookComponent } from './pages/update-book/update-book.component';
 import { AddBookComponent } from './pages/add-book/add-book.component';
 import { BooksService } from './shared/books.service';
+import { LoginComponent } from './pages/login/login.component';
+import { FormLoginComponent } from './component/form-login/form-login.component';
 //import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
@@ -31,13 +33,16 @@ import { BooksService } from './shared/books.service';
     CodigoLibrosPipe,
     CardComponent,
     UpdateBookComponent,
-    AddBookComponent/*,
+    AddBookComponent,
+    LoginComponent,
+    FormLoginComponent/*,
     FilterPipe,*/
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [BooksService],
   bootstrap: [AppComponent]

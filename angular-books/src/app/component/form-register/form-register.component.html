@@ -1,20 +1,36 @@
 <div class="fondo">
 
-    <div class="text">
+    <div [formGroup]="myRegister" class="text">
         <div class="t1">
             Registrate
             <hr>
         </div>
         
         <div class="t2">
-            <input type="text" placeholder="Nombre" class="t2Input">
-            <input type="text" placeholder="Apellido" class="t2Input">
-            <input type="email" placeholder="Correo" class="t2Input">
-            <input type="password" placeholder="Contraseña" class="t2Input">
-            
-            <button type="button" class="bRegistro">Registrate</button>
+            <input type="text" formControlName="nombre" placeholder="Nombre" class="t2Input">
+            <div *ngIf="myRegister.get('nombre').invalid && (myRegister.get('nombre').dirty || myRegister.get('nombre').touched)" class="error-message">
+                <div *ngIf="myRegister.get('nombre').errors?.required"> obligatorio</div>
+            </div>
+
+            <input type="text" formControlName="apellido" placeholder="Apellido" class="t2Input">
+            <div *ngIf="myRegister.get('apellido').invalid && (myRegister.get('apellido').dirty || myRegister.get('apellido').touched)" class="error-message">
+                <div *ngIf="myRegister.get('apellido').errors?.required"> obligatorio</div>
+            </div>
+
+            <input type="email" formControlName="email" placeholder="Correo" class="t2Input">
+            <div *ngIf="myRegister.get('email').invalid && (myRegister.get('email').dirty || myRegister.get('email').touched)" class="error-message">
+                <div *ngIf="myRegister.get('email').errors?.required">obligatorio</div>
+                <div *ngIf="myRegister.get('email').errors?.email">introduzca formato correo ejemplo ...@gmail.com</div>
+            </div>
+
+            <input type="password" formControlName="password" placeholder="Contraseña" class="t2Input">
+            <div *ngIf="myRegister.get('password').invalid && (myRegister.get('password').dirty || myRegister.get('password').touched)" class="error-message">
+                <div *ngIf="myRegister.get('password').errors?.required">obligatorio</div>
+                <div *ngIf="myRegister.get('password').errors?.minlength">8 caracteres minimo</div>
+            </div>
+
+            <button type="button" class="bRegistro" [disabled]="myRegister.invalid" (click)="onSubmit()">Registrate</button>
         </div>
     </div>
 
 </div>
-
